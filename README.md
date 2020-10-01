@@ -14,8 +14,7 @@ cd grafana-7.2.0
 ./bin/grafana-server web
 ```
 
-
-##Resources:
+## Resources:
 
 https://github.com/Technofy/cloudwatch_exporter
 https://www.scaleway.com/en/docs/configure-prometheus-monitoring-with-grafana/
