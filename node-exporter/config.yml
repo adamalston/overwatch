@@ -1,0 +1,22 @@
+region: us-east-1
+metrics:
+    #AWS/ECS Metrics
+    - aws_namespace: AWS/ECS
+      aws_metric_name: MemoryUtilizationd
+      aws_dimensions: [ClusterName, ServiceName]
+      aws_statitics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+    - aws_namespace: AWS/ECS
+      aws_metric_name: MemoryReservation
+      aws_dimensions: [ClusterName, ServiceName]
+      aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+    - aws_namespace: AWS/ECS
+      aws_metric_name: CPUUtilization
+      aws_dimensions: [ClusterName, ServiceName]
+      aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]
+
+    - aws_namespace: AWS/ECS
+      aws_metric_name: CPUReservation
+      aws_dimensions: [ClusterName, ServiceName]
+      aws_statistics: [Sum, SampleCount, Minimum, Maximum, Average]
