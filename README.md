@@ -1,21 +1,38 @@
 # Overwatch
 
-```bash
-./prometheus
-./node_exporter
+Fast deploy stack with Alertmanager, Cloudwatch-Exporter, Grafana, Prometheus.
+
+## Configure your environment
+
+Cloudwatch-Exporter
+Change the value below on **_cloudwatch-exporter.dockerfile_** to your AWS key and secret.
+
+```
+ENV AWS_ACCESS_KEY_ID=value \
+    AWS_SECRET_ACCESS_KEY=value
 ```
 
-### Todo
-- **Infrastructure**
-    - [x] Install
-    - [x] Setup
-    - [x] Connect
-- **Dashboard**
-    - [x] Configure dashboard
+## Browser Access
 
-## Resources:
+Prometheus\
+http://localhost:9090
 
-https://github.com/Technofy/cloudwatch_exporter
+Alertmanager\
+http://localhost:9093
 
-https://www.scaleway.com/en/docs/configure-prometheus-monitoring-with-grafana/
+Grafana\
+http://localhost:3000
 
+## Commands
+
+### Prometheus Reload
+
+curl -X POST http://localhost:9090/-/reload
+
+### Prometheus Health Check
+
+curl http://localhost:9090/-/healthy
+
+### Cloudwatch Exporter Reload
+
+curl -X POST http://localhost:9106/-/reload

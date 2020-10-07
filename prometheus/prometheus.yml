@@ -1,16 +1,33 @@
-tasks:
-    - name: ec2_cloudwatch
-      metrics:
-          - aws_namespace: "AWS/EC2"
-            aws_dimensions: [InstanceId]
-            aws_dimensions_select:
-                InstanceId: [$_target]
-            aws_metric_name: CPUUtilization
-            aws_statistics: [Average]
+global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+  external_labels:
+    monitor: "monitoring-aws"
 
-          - aws_namespace: "AWS/EC2"
-            aws_dimensions: [InstanceId]
-            aws_dimensions_select:
-                InstanceId: [$_target]
-            aws_metric_name: NetworkOut
-            aws_statistics: [Average]
+rule_files:
+  - "alert.rules" 
+
+scrape_configs:
+  - job_name: "prometheus"
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+          - localhost:9090
+  
+  - job_name: cloudwatch-exporter
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+          - cloudwatch-exporter:9106
+  
+  - job_name: "node-exporter"
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+          - node-exporter:9100
+
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+          - cadvisor:8080
