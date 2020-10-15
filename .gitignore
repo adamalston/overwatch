@@ -1,3 +1,7 @@
 *.csv
 *.pem
+*.drawio
+
 hidden*
+
+cloudwatch-exporter/cloudwatch-exporter.dockerfile
