@@ -2,7 +2,7 @@
     <img src="assets/overwatch.svg" alt="Overwatch" height="128px">
 </div>
 
-# <div align="center">Overwatch &middot; [![License Badge](https://img.shields.io/github/license/adamalston/Overwatch?color=9cf)](LICENSE) ![AWS Project](https://img.shields.io/badge/-Project-informational?style=flat&logo=amazon-aws&logoColor=FF9900&color=white&labelColor=5c5c5c)</div>
+# <div align="center">Overwatch &middot; [![License Badge](https://img.shields.io/github/license/adamalston/Overwatch?color=white)](LICENSE) ![AWS Project](https://img.shields.io/badge/-Project-informational?style=flat&logo=amazon-aws&logoColor=FF9900&color=white&labelColor=5c5c5c)</div>
 
 -   [Introduction](#introduction)
 -   [System Architecture](#system-architecture)
@@ -45,12 +45,12 @@ ENV AWS_ACCESS_KEY_ID=value \
 <details id="installation">
     <summary><b>Installation & Deployment</b></summary>
 
-1. Install Docker ([Mac](https://docs.docker.com/docker-for-mac/install/), [Windows](https://docs.docker.com/docker-for-windows/install/), [Linux](https://docs.docker.com/engine/install/))
-2. Clone this repository
+1. Clone this repository
+2. Install Docker ([Mac](https://docs.docker.com/docker-for-mac/install/), [Windows](https://docs.docker.com/docker-for-windows/install/), [Linux](https://docs.docker.com/engine/install/))
 3. In the project directory run `docker-compose up`
-4. Navigate to [localhost:3000](http://localhost:3000) in a browser (If prompted to login, username: `admin`, password: `admin`)
+4. Navigate to Grafana ([localhost:3000](http://localhost:3000)) in a browser
 5. On the left sidebar, select Configuration > Data Sources
-6. Select Prometheus, set the HTTP URL to the IPv4 address of your EC2 instance with port number 9090; `ec2-[IP-address-goes-here].compute-1.amazonaws.com:9090`
+6. Select Prometheus, set the HTTP URL to the IPv4 address of your EC2 instance with port number 9090
 7. On the left sidebar, select Dashboards > Manage
 8. Select New Dashboard
 
@@ -110,11 +110,11 @@ CloudWatch Exporter Reload: `curl -X POST http://localhost:9106/-/reload`
 
 ## Resources
 
+Project icon<sup>[^](#overwatch)</sup> from [flaticon.com](https://www.flaticon.com/free-icon/retina_1632950?term=retina&page=1&position=4) (edited by me)
+
 System architecture diagram<sup>[^](#system-architecture)</sup> made with [draw.io](https://draw.io/)
 
 System architecture diagram icons<sup>[^](#system-architecture)</sup> from [fontawesome.com](https://fontawesome.com/) and [simpleicons.org](https://simpleicons.org/) (both edited by me)
-
-Project icon<sup>[^](#overwatch)</sup> from [flaticon.com](https://www.flaticon.com/free-icon/retina_1632950?term=retina&page=1&position=4) (edited by me)
 
 ---
 
