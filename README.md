@@ -1,11 +1,11 @@
 <div align="center" id="overwatch">
-    <img src="assets/overwatch.svg" alt="Overwatch" height="128px">
+    <img src="./assets/overwatch.svg" alt="Overwatch" height="128px">
 </div>
 
-# <div align="center">Overwatch &middot; [![License Badge](https://img.shields.io/github/license/adamalston/Overwatch?color=white)](LICENSE) ![AWS Project](https://img.shields.io/badge/-Project-informational?style=flat&logo=amazon-aws&logoColor=FF9900&color=white&labelColor=5c5c5c)</div>
+# <div align="center">Overwatch &middot; [![License Badge](https://img.shields.io/github/license/adamalston/Overwatch?color=white)](LICENSE) ![AWS Project](https://img.shields.io/badge/-Project-informational?style=flat&logo=amazon-aws&logoColor=232F3E&color=white)</div>
 
 -   [Introduction](#introduction)
--   [System Architecture](#system-architecture)
+-   [Systems Architecture](#systems-architecture)
 -   [Setup](#setup)
     -   [Installation & Deployment](#installation)
 -   [Usage](#usage)
@@ -23,10 +23,10 @@ I have used [AWS](https://aws.amazon.com/), [Docker](https://www.docker.com/), [
 
 The tight integration of Overwatch’s components allows personnel overseeing operations to assess failures quickly.
 
-## System Architecture
+## Systems Architecture
 
 <p align="center">
-    <img src="./assets/overwatch.png" width="600px"  alt="System Architecture" >
+    <img src="./assets/overwatch.png" width="600px"  alt="Systems Architecture" >
 </p>
 
 CloudWatch, Prometheus, and Node Exporter - each in their own Docker container - monitor an EC2 instance on AWS. Jenkins is running on the EC2 instance which is connected to the internet. When prompted via command, Jenkins begins running a CI/CD pipeline. This pipeline creates a Docker container where CentOS (Linux distribution) is virtualized. A GitHub repository is then cloned. The project in this repo is built and integration tests are run. The results of these integration tests are then relayed to Grafana for a user to see.
@@ -110,14 +110,14 @@ CloudWatch Exporter Reload: `curl -X POST http://localhost:9106/-/reload`
 
 ## Resources
 
-Project icon<sup>[^](#overwatch)</sup> from [flaticon.com](https://www.flaticon.com/free-icon/retina_1632950?term=retina&page=1&position=4) (edited by me)
+Project icon<sup>[^](#overwatch)</sup> from [flaticon.com](https://www.flaticon.com/svg/static/icons/svg/1632/1632950.svg) (edited by me)
 
-System architecture diagram<sup>[^](#system-architecture)</sup> made with [draw.io](https://draw.io/)
+Systems architecture diagram<sup>[^](#systems-architecture)</sup> made with [draw.io](https://draw.io/)
 
-System architecture diagram icons<sup>[^](#system-architecture)</sup> from [fontawesome.com](https://fontawesome.com/) and [simpleicons.org](https://simpleicons.org/) (both edited by me)
+Systems architecture diagram icons<sup>[^](#systems-architecture)</sup> from [fontawesome.com](https://fontawesome.com/) and [simpleicons.org](https://simpleicons.org/) (both edited by me)
 
 ---
 
 <img src="https://git.io/JUn8T" height="14px"> Thank you for your interest, this project was fun and insightful! If you have any feedback or questions, please reach out via email which can be found at [<img src="https://git.io/JTLAg" height="14px">AdamAlston.com](https://www.adamalston.com/)
 
-[<div align="right">To the top</div>](#readme)
+[<div align="right">Back to top</div>](#readme)
