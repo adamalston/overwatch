@@ -17,16 +17,16 @@
 
 ## Introduction
 
-Millions of developers use AWS to bring products and services to people around the world. Code is not perfect and neither are the people writing it. Those overseeing operations need to be able to assess their deployments at all times. To help with this task, I have created Overwatch.
+Millions of developers use AWS to bring products and services to people around the world. Code is not perfect and neither are the people writing it. Those overseeing operations need to be able to assess their deployments at all times. To help with this task, I created Overwatch.
 
-I have used [AWS](https://aws.amazon.com/), [Docker](https://www.docker.com/), [Prometheus](https://github.com/prometheus/prometheus), and [Grafana](https://github.com/grafana/grafana) to develop a monitoring solution that provides oversight for CI/CD pipelines running in the cloud so that auditors and operation’s personnel can quickly assess the health of mission-critical infrastructure.
+I used [AWS](https://aws.amazon.com/), [Docker](https://www.docker.com/), [Prometheus](https://github.com/prometheus/prometheus), and [Grafana](https://github.com/grafana/grafana) to develop a monitoring solution that provides oversight for CI/CD pipelines running in the cloud so that auditors and operation’s personnel can quickly assess the health of mission-critical infrastructure.
 
 The tight integration of Overwatch’s components allows personnel overseeing operations to assess failures quickly.
 
 ## Systems Architecture
 
 <p align="center">
-    <img src="./assets/overwatch.png" width="600px"  alt="Systems Architecture" >
+    <img src="./assets/system.png" width="600px"  alt="Systems Architecture" >
 </p>
 
 CloudWatch, Prometheus, and Node Exporter - each in their own Docker container - monitor an EC2 instance on AWS. Jenkins is running on the EC2 instance which is connected to the internet. When prompted via command, Jenkins begins running a CI/CD pipeline. This pipeline creates a Docker container where CentOS (Linux distribution) is virtualized. A GitHub repository is then cloned. The project in this repo is built and integration tests are run. The results of these integration tests are then relayed to Grafana for a user to see.
