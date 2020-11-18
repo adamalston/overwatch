@@ -87,7 +87,7 @@ CloudWatch Exporter Reload: `curl -X POST http://localhost:9106/-/reload`
 
 ## Future
 
--   [x] Dockerize the project
+-   [x] Docker Support
 
     -   Advantages
         -   Keeping the processes in separate images (and thus running them in separate containers) permits each to be maintained independently. Further, each process can be secured independently.
@@ -96,15 +96,16 @@ CloudWatch Exporter Reload: `curl -X POST http://localhost:9106/-/reload`
     -   Engineering Challenge
         -   Dockerizing each monitoring platform meant that the metrics needed to be pulled from a local server instead of the platforms themselves.
 
--   [x] Alertmanager support
+-   [x] Alertmanager Support
 
     -   Setup the Alertmanager config in [alertmanager.yml](alertmanager/alertmanager.yml) to meet your needs. Configurable options include email alerts, SMS messages, and more.
 
--   Automate from frontend to backend
+-   Automate
 
-    -   Currently, both pieces work on their own with manual entry to AWS
+    -   Currently, the frontend and backend work on their own with manual entry for AWS. Automate the entire setup process connecting the frontend to the backend.
 
--   Create a more robust dashboard
+-   Dashboard
+    -   Create a more robust dashboard.
 
 </details>
 
